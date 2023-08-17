@@ -1,0 +1,177 @@
+Описание задания.
+1. Как скопировать на свой компьютер репозиторий из github.com, что должно быть сделано предварительно?
+
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~
+$ cd //Заходим в свою директорию
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~
+$ pwd //смотрим где находимся
+/c/Users/Admin
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~
+$ ls //проверяем что в папке
+ 18-020523-e-fe/
+…
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~
+$ cd 18-020523-e-fe //Заходим в свой проект
+
+Идем в Github.com
+Находим нашь репозиторий который хотим скопировать.
+<> Code кнопка
+SSH copy
+Возвращаемся в Git bash пишем команду 
+Git clone git@github.com:offsana/18-020523-e-fe.git
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe
+$ git clone git@github.com:offsana/18-020523-e-fe.git //копируем весь проект
+Cloning into '18-020523-e-fe'...
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 12 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (12/12), done.
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe
+$ cd 18-020523-e-fe //заходим и смотрим
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/18-020523-e-fe (main)
+$ ls -la  //смотрим все + скрытое
+total 10
+drwxr-xr-x 1 Admin 197121    0 Aug 17 09:39 ./
+drwxr-xr-x 1 Admin 197121    0 Aug 17 09:36 ../
+drwxr-xr-x 1 Admin 197121    0 Aug 17 09:38 .git/
+-rw-r--r-- 1 Admin 197121   38 Aug 17 09:37 README.md
+-rw-r--r-- 1 Admin 197121 3408 Aug 17 09:39 history.txt
+-rw-r--r-- 1 Admin 197121   33 Aug 17 09:37 song.txt
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/18-020523-e-fe (main)
+$
+
+
+*************************************************************************************
+2.Как создать git репозиторий из локального каталога на своем компьютере. Как его отправить на github.com?
+
+создаем гит репозиторий из каталога:
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/18-020523-e-fe (main)
+$ cd .. //выходим с папки на один этап
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe
+$ mkdir new_project //новая папка
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe
+$ ls // смотрим содержание
+18-020523-e-fe/  new_project/
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe
+$ cd new_project //заходим в нее
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project
+$ touch text.txt //создаем файл
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project
+$ ls //смотрим
+text.txt
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project
+$ git init //создаем с папки гит перозиторий на компе
+Initialized empty Git repository in C:/Users/Admin/18-020523-e-fe/new_project/.git/
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project (master)
+$ ls -la //смотрим все скрытые и не скрытые папки файлы
+total 4
+drwxr-xr-x 1 Admin 197121 0 Aug 17 10:45 ./
+drwxr-xr-x 1 Admin 197121 0 Aug 17 10:44 ../
+drwxr-xr-x 1 Admin 197121 0 Aug 17 10:45 .git/
+-rw-r--r-- 1 Admin 197121 0 Aug 17 10:45 text.txt
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project (master)
+$
+
+Идем на Git Hub и создаем новый репозиторий 
+вверху справа new repository
+Repository name* называем так же как и локальный репозиторий new_project
+нажимаем Create repository
+возвращаемся в git bush 
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project (master)
+$ git status //проверяем статус (что он пока только в working directory)
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        text.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project (master)
+$ git add .  //команда перемещения в staging area -индекс
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project (master)
+$ git status //смотрим статус
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   text.txt //новый файл txt путем если бы был подкаталог
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project (master)
+$ git commit -m "кометарий обязательный" //коммит с коментарием
+[master (root-commit) e6ac5a0] кометарий обязательный
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 text.txt
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project (master)
+$ git remote -v //проверка связи с git hub и ее еще нет
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project (master)
+$ git branch -M main //ветку master поменяли на main, это нужно для git hub
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project (main)
+$ git remote add origin git@github.com:offsana/new_project.git //привязка к GIT HUB
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project (main)
+$ git remote -v//проверяем привязку
+origin  git@github.com:offsana/new_project.git (fetch)
+origin  git@github.com:offsana/new_project.git (push)
+
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project (main)
+$ git push -u origin main //первая отправка файлов в гит хаб подальшие делать коммиты
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 253 bytes | 84.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:offsana/new_project.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+****************************************************************************************
+
+Как получить на локальный компьютер изменения с github.com
+Admin@DESKTOP-JBP4RMK MINGW64 ~/18-020523-e-fe/new_project (main)
+$ git pull //получить изменения
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 674 bytes | 48.00 KiB/s, done.
+From github.com:offsana/new_project
+   e6ac5a0..f4c7276  main       -> origin/main
+Updating e6ac5a0..f4c7276
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+
+
+Какую информацию нам дают команда :
+git status  //в каком состоянии(статусе) рабочий репозиторий ( файлы, паки, комитты) 
+git log //история комитов
+git remote -v //проверяем привязку к гиту
